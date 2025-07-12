@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>مولد الباسورد</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>مولد كلمة المرور</h1>
+    <form method="POST">
+      <label>عدد الحروف:</label>
+      <input type="number" name="letters" min="0" required>
+      <label>عدد الرموز:</label>
+      <input type="number" name="symbols" min="0" required>
+      <label>عدد الأرقام:</label>
+      <input type="number" name="numbers" min="0" required>
+      <button type="submit">توليد</button>
+    </form>
+    {% if password %}
+      <div id="result">🔑 كلمة المرور: {{ password }}</div>
+    {% endif %}
+  </div>
+</body>
+<footer>
+  <p>حقوق التصميم والتطوير © شذا الزهراني 2025</p>
+</footer>
+</html>
